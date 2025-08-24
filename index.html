@@ -219,28 +219,38 @@
         </div>
 
         <!-- Netlify form -->
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="hidden">
-            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-          </p>
-          <div class="grid">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" required />
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" required />
-            </label>
-          </div>
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button class="btn btn-primary magnet" type="submit">Send Message</button>
-          <p class="form-note">This form is powered by Netlify Forms.</p>
-        </form>
+        
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thank-you">
+  <!-- Hidden form name for Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+
+  <!-- Spam prevention honeypot -->
+  <p class="hidden">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+
+  <!-- Fields -->
+  <div class="grid">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" required />
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required />
+    </label>
+  </div>
+
+  <label>
+    <span>Message</span>
+    <textarea name="message" rows="5" required></textarea>
+  </label>
+
+  <!-- Submit -->
+  <button class="btn btn-primary magnet" type="submit">Send Message</button>
+  <p class="form-note">This form is powered by Netlify Forms.</p>
+</form>
+
       </div>
     </section>
   </main>
@@ -269,3 +279,4 @@
   <script src="./script.js" defer></script>
 </body>
 </html>
+
